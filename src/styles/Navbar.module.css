@@ -1,0 +1,227 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--secondary);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+
+.scrolled {
+  box-shadow: var(--shadow);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 24px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoImageWrap {
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.navLinks a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: var(--primary);
+}
+
+.navLinks a:hover::after {
+  transform: scaleX(1);
+}
+
+.activeLink {
+  color: var(--primary) !important;
+}
+
+.activeLink::after {
+  transform: scaleX(1) !important;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+.dropdown:hover {
+  color: var(--primary);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 8px 0;
+  min-width: 160px;
+  z-index: 200;
+}
+
+.dropdownMenu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  transition: background 0.15s;
+}
+
+.dropdownMenu li a:hover {
+  background: var(--bg-light);
+  color: var(--primary);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px 24px;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+.mobileMenu a {
+  font-weight: 600;
+  padding: 8px 0;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border);
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  background: #25d366;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.whatsappBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.whatsappBtn:hover {
+  background: #1fb759;
+  transform: translateY(-1px);
+}
+
+.mobileWhatsApp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobileWhatsApp svg {
+  width: 20px;
+  height: 20px;
+  color: #25d366;
+}
+
+.mobileMenu a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileDropdown strong {
+  color: var(--primary);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.mobileDropdown a {
+  padding-left: 12px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .navLinks { display: none; }
+  .actions { display: none; }
+  .hamburger { display: flex; }
+}
